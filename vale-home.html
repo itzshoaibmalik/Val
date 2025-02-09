@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine? 💖</title>
+    <title>Will You Be My Valentine? </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
@@ -20,6 +20,7 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            position: relative;
         }
 
         .container {
@@ -123,6 +124,16 @@
             font-weight: bold;
         }
 
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 1rem;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: #faf9f9;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 1.5rem;
@@ -195,20 +206,24 @@
     <div class="hearts" id="hearts"></div>
     
     <div class="container">
-        <h1> 🥰 To My Dearest 😒🍷😗</h1>
+        <h1>🥰To My Dearest😗🍷 </h1>
         <p>Since you walked into my life, my world has been brighter, more beautiful, and filled with endless joy. Every moment with you feels like a dream I never want to wake up from.
 
-            And now, the moment you've been waiting for…
+            And now, the moment you've been waiting for
             
-            Will you be my Valentine? ❤️</p>
+            Will you be my Valentine? </p>
         
         <div class="buttons">
-            <button id="yesBtn">Yes! ❤️</button>
-            <button id="noBtn"> Noo 😡 </button>
+            <button id="yesBtn">Yes! </button>
+            <button id="noBtn"> Noo  </button>
         </div>
         
         <div id="message"></div> <br>
         <div id="redirect"></div>
+    </div>
+
+    <div class="footer">
+        Made by Shoaib with 💓
     </div>
 
     <script>
@@ -230,9 +245,8 @@
         // Create falling hearts
         setInterval(createHeart, 300);
         
-
         yesBtn.addEventListener('click', () => {
-            message.textContent = "YAYAYAY! 💖 You've made me the happiest! I love you the most! 💕 ";
+            message.textContent = "YAYAYAY!  You've made me the happiest! I love you the most!  ";
             document.getElementById('redirect').innerHTML = '<a href = "test.html"> Click here for a surpriseeeee </a>';
             document.querySelector('.container').style.transform = 'scale(1.1)';
             setTimeout(() => {
@@ -250,7 +264,7 @@
         });
 
         noBtn.addEventListener('click', () => {
-            message.textContent = "Huhhh Nice try, but you can't say no! 😒😠😠";
+            message.textContent = "Huhhh Nice try, but you can't say no! ";
         });
     </script>
 </body>
