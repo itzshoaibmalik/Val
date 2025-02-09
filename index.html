@@ -83,7 +83,7 @@
         }
 
         #noBtn {
-            background: #553439;
+            background: #ffb6c1;
             color: white;
         }
 
@@ -132,6 +132,21 @@
             font-size: 1rem;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             color: #ffffff;
+        }
+
+        .socials {
+            margin-top: 1rem;
+        }
+
+        .socials a {
+            color: #000000;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .socials a:hover {
+            color: #ff1493;
         }
 
         @media (max-width: 768px) {
@@ -224,8 +239,13 @@
 
     <div class="footer">
         Made by Shoaib with 💓
+        <div class="socials">
+            <a href="https://www.instagram.com/by.shoaib" target="_blank"><i class="fab fa-instagram"></i></a>
+            <!-- Add more social links here if needed -->
+        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.9.0/dist/fireworks.js"></script>
     <script>
         const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
@@ -255,6 +275,42 @@
             
             // Add more hearts when yes is clicked
             setInterval(createHeart, 100);
+
+            // Fireworks animation
+            const container = document.querySelector('body');
+            const fireworks = new Fireworks(container, {
+                speed: 3,
+                acceleration: 1.05,
+                friction: 0.95,
+                gravity: 1.5,
+                particles: 150,
+                trace: 3,
+                explosion: 5,
+                boundaries: {
+                    top: 50,
+                    bottom: container.clientHeight,
+                    left: 50,
+                    right: container.clientWidth
+                },
+                sound: {
+                    enable: true,
+                    files: [
+                        'https://cdn.jsdelivr.net/gh/crashmax-dev/fireworks-js@2.9.0/sounds/explosion0.mp3',
+                        'https://cdn.jsdelivr.net/gh/crashmax-dev/fireworks-js@2.9.0/sounds/explosion1.mp3',
+                        'https://cdn.jsdelivr.net/gh/crashmax-dev/fireworks-js@2.9.0/sounds/explosion2.mp3'
+                    ],
+                    volume: {
+                        min: 4,
+                        max: 8
+                    }
+                }
+            });
+
+            fireworks.start();
+
+            setTimeout(() => {
+                fireworks.stop();
+            }, 5000); // Stop fireworks after 5 seconds
         });
 
         noBtn.addEventListener('mouseover', () => {
